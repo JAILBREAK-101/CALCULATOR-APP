@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+
+  <title>My Calculator App</title>
+
+  <!-- FONTS -->
+</head>
+
+<body>
+  <div class="main-wrapper">
+    <section class="calculator">
+      <header>
+        <!-- Name of the calculator -->
+        <span class="logo">JailBreak</span>
+        <!-- theme section. -->
+        <div class="theme">
+          <span>theme</span>
+          <div class="color-changer">
+            <ul>
+              <label for="first">1</label>
+              <label for="second">2</label>
+              <label for="third">3</label>
+            </ul>
+
+            <!-- The theme Changer. -->
+            <form action="" class="color-changer">
+              <fieldset class="changer-slider">
+                <legend>Selections</legend>
+                <input type="radio" name="theme" id="first" checked>
+                <input type="radio" name="theme" id="second">
+                <input type="radio" name="theme" id="third">
+                <!-- <button class="picker"></button>
+                            <button class="picker2"></button>
+                            <button class="picker3"></button> -->
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="display-screen">
+          <!-- The outputted value comes here. -->
+          <p type="text" name="display-box" class="value-box"></p>
+        </div>
+
+        <section title="container-for-buttons" class="container-for-computation">
+
+          <div class="computation-section">
+            <button class="key-btn num-keys" dataset="">7</button>
+            <button class="key-btn num-keys">8</button>
+            <button class="key-btn num-keys">9</button>
+            <button class="key-btn functionals">Del</button>
+            <button class="key-btn num-keys">4</button>
+            <button class="key-btn num-keys">5</button>
+            <button class="key-btn num-keys">6</button>
+            <button class="key-btn operator">+</button>
+            <button class="key-btn num-keys">1</button>
+            <button class="key-btn num-keys">2</button>
+            <button class="key-btn num-keys">3</button>
+            <button class="key-btn operator">-</button>
+            <button class="key-btn operator">.</button>
+            <button class="key-btn num-keys">0</button>
+            <button class="key-btn operator">/</button>
+            <button class="key-btn operator" style="text-transform: lowercase;">*</button>
+            <button class="key-btn functionals">Reset</button>
+            <button class="key-btn equal-to">=</button>
+          </div>
+        </section>
+
+        <!-- <h1 class="instruction">PLEASE CLEAR YOUR OUTPUT, BEFORE ENTERING A NEW INPUT</h1> -->
+      </main>
+
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://www.frontendmentor.io/profile/JAILBREAK-101">JailBreak</a>.
+      </div>
+    </section>
+  </div>
+</body>
+<script src="theme_switcher.js"></script>
+<script src="./oop.calculator.js"></script>
+
+</html>

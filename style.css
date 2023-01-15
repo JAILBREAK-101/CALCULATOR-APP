@@ -1,0 +1,367 @@
+:root {
+    /* Getting all base styles. */
+    /* THIS IS FOR THE FIRST THEME. */
+    --main-background: hsl(222, 26%, 31%);
+    --theme-changer-background: hsl(223, 31%, 20%);
+    --display-background: hsl(224, 36%, 15%);
+    --normal-keys-color: hsl(221, 14%, 31%);
+    --normal-keys-background: hsl(0, 0%, 100%);
+    --normal-keys-shadow: hsl(224, 28%, 35%);
+    --keys-background-color-key: hsl(225, 21%, 49%);
+    --shadow-for-keys: hsl(224, 28%, 35%);
+    --equal-to-btn: hsl(6, 63%, 50%);
+    --equal-to-btn-shadow: hsl(6, 70%, 34%);
+    --reset-btn: var(var(--keys-background-color-key));
+    --reset-btn-shadow: var(var(--shadow-for-keys));
+    --display-screen-color: white;
+    --global-color-text: white;
+    --attribution-link:  hsl(177, 92%, 70%);
+    --attribution-text: white;
+        /* THEME 2 */
+        --toggle-color2: hsl(25, 98%, 40%);
+
+    /* THEME 3 */
+    --toggle-color3: hsl(176, 100%, 44%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* formatting the elements */
+h1,
+h2,
+h3,
+h4,
+span {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.main-wrapper {
+    background: var(--main-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 2rem;
+    gap: .8rem;
+    font-size: 1em;
+    max-width: 500px;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+header>span {
+    font-size: .5rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--global-color-text);
+}
+
+.instruction {
+    font-size: .5rem;
+    color: hsl(0, 20%, 90%);
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* THE THEME CHANGER. */
+.theme {
+    font-size: .4rem;
+    gap: .4rem;
+    display: flex;
+    align-items: flex-end;
+    grid-template-columns: repeat(2, 1fr);
+    color: var(--global-color-text);
+    text-transform: uppercase;
+}
+
+.theme span {
+    grid-row: 2;
+    padding-bottom: .5em;
+    font-weight: 800;
+    /* font-size: .7em; */
+    display: inline;
+}
+
+.color-changer,
+.theme>span {
+    display: grid;
+}
+
+.color-changer>ul {
+    /* gap: .1rem; */
+    grid-row-start: 1;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    margin: 0 0 .5em 0;
+    padding: 0;
+}
+
+ul>li {
+    bottom: .8rem;
+    position: absolute;
+    font-size: .8em;
+    font-weight: 800;
+}
+
+.changer-slider {
+    width: 100%;
+    grid-row-start: 1;
+    background-color: var(--theme-changer-background);
+    /* height: 100%; */
+    padding: .4em .4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: .3rem;
+    border-radius: 10px;
+}
+
+.picker,
+.picker2,
+.picker3 {
+    box-shadow: none;
+    border-radius: 10px;
+    padding: .6em .6em;
+}
+
+.picker {
+    background-color: var(--equal-to-btn);
+}
+
+/* THE REAL CHANGER. */
+fieldset {
+    border: 0;
+    padding: 1rem 2rem;
+}
+
+legend {
+    display: none;
+}
+
+.color-changer {
+    position: relative;
+}
+
+/* CUSTOMIZING A CHECKBOX. */
+.color-changer input[type="radio"] {
+    appearance: none;
+    width: .5rem;
+    height: .5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    /* border: 3px solid var(--equal-to-btn); */
+}
+
+#first:checked {
+    background-color: var(--equal-to-btn);
+    /* background-color: var(--equal-to-btn); */
+    border: 3px solid var(--equal-to-btn);
+}
+
+input#first:hover {
+    background-color: hsl(6, 63%, 50%);
+}
+
+:is(#first, #second, #third) {
+    background-color: none;
+    transition: .2s background-color, .2s border;
+}
+
+input#second:hover {
+    background-color: var(--toggle-color2);
+}
+
+input#third {
+    background-color: none;
+}
+
+input#third:hover {
+    background-color: var(--toggle-color3);
+}
+
+input#second:checked {
+    border: 3px solid var(--toggle-color2);
+    background-color: var(--toggle-color2);
+}
+
+input#third:checked {
+    border: 3px solid var(--toggle-color3);
+    background-color: var(--toggle-color3);
+}
+
+/* WHEN WE CLICK ON THE SECOND THEME PICKER. */
+.second,
+:root:has(#second:checked) {
+    --main-background: hsl(0, 0%, 90%);
+    --theme-changer-background: hsl(0, 5%, 81%);
+    --display-background: hsl(0, 0%, 93%);
+    --normal-keys-color: hsl(60, 10%, 19%);
+    --normal-keys-background: hsl(45, 7%, 89%);
+    --normal-keys-shadow: grey;
+    --keys-background-color-key: hsl(185, 42%, 37%);
+    --shadow-for-keys: hsl(185, 58%, 25%);
+    --equal-to-btn: hsl(25, 98%, 40%);
+    --equal-to-btn-shadow: hsl(25, 99%, 27%);
+    --global-color-text: black;
+    --display-screen-color: black;
+    --attribution-link:  hsl(6, 63%, 50%);
+    --attribution-text: black;
+}
+
+/* WHEN WE CLICK ON THE THIRD THEME PICKER*/
+.third,
+:root:has(#third:checked) {
+    --main-background: hsl(268, 75%, 9%);
+    --theme-changer-background: hsl(268, 71%, 12%);
+    --display-background: hsl(268, 71%, 12%);
+    --normal-keys-color: hsl(52, 100%, 62%);
+    --normal-keys-background: hsl(268, 47%, 21%);
+    --normal-keys-shadow: hsl(285, 91%, 52%);
+    --keys-background-color-key: hsl(281, 89%, 26%);
+    --shadow-for-keys: hsl(285, 91%, 52%);
+    --equal-to-btn: hsl(176, 100%, 44%);
+    --equal-to-btn-shadow: hsl(177, 92%, 70%);
+    --global-color-text: hsl(52, 100%, 62%);
+    --display-screen-color: hsl(52, 100%, 62%);
+}
+
+/* TO HIDE THE DISPLAY. */
+.picker2,
+.picker3 {
+    visibility: hidden;
+}
+
+/* THE PARENT OF THE COMPUTATIONAL PART. */
+main {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: .4em;
+}
+
+.display-screen {
+    /* min-height: 100%; */
+    background: var(--display-background);
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+    max-height: 100%;
+}
+
+/* TO DISPLAY THE VALUE. */
+.value-box {
+    text-align: right;
+    font-size: 1.2em;
+    padding: .6em;
+    max-width: 100%;
+    color: var(--display-screen-color);
+    font-weight: 600;
+    background: none;
+    border: 0;
+    height: 100%;
+    margin: .5rem 0;
+    word-wrap: break-word;
+    word-break: break-all;
+    /* Fix the numbers change bar. */
+}
+
+/* THE COMPUTATIONAL PART. */
+.container-for-computation {
+    font-size: inherit;
+    padding: .8em;
+    background: var(--theme-changer-background);
+    border-radius: 10px;
+}
+
+.computation-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem;
+}
+
+/* setting the size of the buttons. */
+button {
+    border: 0;
+    font-size: .7em;
+    border-radius: 5px;
+    box-shadow: 0 3px 1px 0 var(--normal-keys-shadow);
+    padding: .4em .6em;
+    font-weight: 700;
+    color: var(--normal-keys-color);
+    cursor: pointer;
+    text-transform: uppercase;
+    background: var(--normal-keys-background);
+}
+
+button:hover {
+    opacity: .7;
+    background: white;
+}
+
+/* THE RESET AND THE EQUAL TO BUTTON */
+button.key-btn:nth-of-type(4),
+button.key-btn:nth-of-type(17) {
+    color: white;
+    box-shadow: 0 3px 1px 0 var(--shadow-for-keys);
+    background: var(--keys-background-color-key);
+}
+
+button.key-btn:nth-of-type(17) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+button.key-btn:nth-of-type(18) {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    background-color: var(--equal-to-btn);
+    box-shadow: 0 3px 1px 0 var(--equal-to-btn-shadow);
+    color: white;
+}
+
+/* FOR ALL THEIR FONT-SIZES */
+:is(.key-btn:nth-of-type(4), .key-btn:nth-of-type(17), .key-btn:nth-of-type(18)) {
+    font-size: .6em;
+}
+
+.attribution {
+    font-size: 14px;
+    text-align: center;
+    color: var(--attribution-text)
+}
+
+.attribution a {
+    font-weight: 600;
+    color: var(--attribution-link);
+}
+
+.attribution a:hover {
+    text-decoration: none;
+}
